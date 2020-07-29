@@ -1,0 +1,31 @@
+.page-transition__container--md,
+.page-transition__container--xs{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    z-index: 100;
+    visibility: hidden;
+    overflow: hidden;
+}
+.from-top,
+.from-bottom,
+.from-left{
+    height: 100%;
+    width: 100%;
+    background-color: $black;
+    transform: scaleY(0);
+    position: relative;
+}
+.from-left{
+    transform:scaleX(0);
+}
+.from-top{
+    top:-100%;
+}
+.from-bottom{
+    bottom:-100%;
+}
+

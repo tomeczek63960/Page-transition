@@ -1,0 +1,60 @@
+.about__content{
+    @include bgImg('about-img.png',cover,center right -140px);
+    padding: 50px 0;
+    min-height:calc(100vh - 100px);
+
+    &__data{
+        text-align: center;
+    }
+
+    &__heading{
+        @include heading(35px);
+    }
+    &__text{
+        margin-top: 30px;
+        line-height: 1.5;
+    }
+    &__btn{
+        @extend %btn;
+        margin-top: 30px;
+    }
+}
+
+
+@media screen and (min-width:600px){
+
+    .about__content{
+        background-position: center center ;
+
+        &__data{
+            text-align: left;
+            width:70%;
+        }
+        &__heading{
+            font-size: 50px;
+        }
+        &__text{
+            margin-top: 45px;
+            width: 70%;
+        }
+        &__btn{
+            margin-top: 50px;
+        }
+    }
+
+}
+
+@media screen and (min-width:900px){
+
+    .about__content{
+
+        &__heading{
+            font-size: 70px;
+        }
+
+        &__text{
+            line-height: 2;
+        }
+    }
+
+}

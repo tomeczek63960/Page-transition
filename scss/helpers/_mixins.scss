@@ -1,0 +1,27 @@
+@mixin heading($fz:30px,$mt:auto,$lh:auto) {
+    font-size: $fz;
+    font-weight: bold;
+    text-transform: capitalize;
+    
+    @if($mt != auto){
+        margin-top: $mt;
+    }
+
+    @if($lh != auto){
+        line-height: $lh;
+    }
+}
+
+@mixin bgImg($url,$size,$position) {
+    background-image: url('../assets/#{$url}');
+    background-size: $size;
+    background-position: $position;
+    background-repeat: no-repeat;
+    
+}
+
+@mixin maxWidthCenter($width) {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+}

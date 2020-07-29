@@ -1,0 +1,171 @@
+
+.event__content{
+    padding-bottom: 30px;
+  
+    &__flex{
+        @include maxWidthCenter(450px);
+        text-align: center;
+    }
+    &__img{
+        margin-top: 10px;
+        width: 100%;
+        height: 250px;
+        transform: scale(0.4);
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__heading{
+        @include heading(30px,10px);
+    }
+   
+    &__text{
+        margin-top: 20px;
+    }
+    &__btn{
+        @extend %btn;
+        margin-top: 30px;
+    }
+
+    &__card{
+        @include maxWidthCenter(250px);
+        margin-top: 30px;
+        text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &-wrapper{
+            margin-top: 35px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &-1{
+            background-image: url('../assets/event-1.svg');
+        }
+        &-2{
+            background-image: url('../assets/event-2.svg');
+        }
+        &-3{
+            background-image: url('../assets/event-3.svg');
+        }
+        
+        &__img{
+            margin-right: auto;
+            margin-left: auto;
+            width: 65%;
+            height: 70px;
+            transform: scale(0.4);
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__heading{
+            @include heading(16px, 15px);
+        }
+    }
+}
+
+
+@media screen and (min-width:700px){
+
+
+    .event__content{
+        padding-top: 30px;
+        min-height: calc( 100vh - 100px);
+
+        background-image: 
+        url('../assets/home/left-top.svg'),
+        url('../assets/home/left-top-cover.svg'),
+        url('../assets/home/left-bottom.svg'),
+        url('../assets/home/left-bottom-dots.svg'),
+        url('../assets/home/right-bottom.svg'),
+        url('../assets/home/right-bottom-dots.svg'),
+        url('../assets/home/right-bottom-cover.svg'),
+        url('../assets/home/right-top-dots.svg');
+
+        background-repeat: no-repeat;
+        background-position:
+             left top,
+            top left ,
+            bottom left ,
+            bottom left ,
+             bottom right,
+             bottom right,
+             bottom right,
+             top 40px right;
+
+        &__flex{
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            max-width: initial;
+        }
+        &__img{
+            order:1;
+            width: 50%;
+            flex-shrink: 0;
+        }
+        &__data{
+            padding-right: 25px;
+            max-width: 500px;
+        }
+        &__heading{
+            margin-top: 0;
+        }
+    }
+
+}
+
+
+@media screen and (min-width:900px){
+
+    .event__content{
+        &__img{
+            margin-top: 0;
+            height: 350px;
+        }
+        &__heading{
+            font-size: 45px;
+        }
+       
+        &__text{
+            margin-top: 45px;
+        }
+        &__btn{
+            margin-top: 50px;
+        }
+        &__card{
+            margin: 30px;
+
+            &__img{
+                width: 75%;
+                height: 90px;
+            }
+            &__heading{
+                font-size: 17px;
+            }
+            &__text{
+                margin-top: 15px;
+            }
+        }
+           
+    }
+    
+
+}
+
+
+@media screen and (min-width:1100px){
+    .event__content{
+        &__heading{
+            font-size: 52px;
+        }
+
+    }
+}

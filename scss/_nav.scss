@@ -1,0 +1,120 @@
+.page-logo{
+    @include bgImg('Logo.svg',cover, center center);
+    width: 72px;
+    height: 62px;
+    display: block;
+    text-indent: -99999px;
+}
+.page-nav__navbar{
+    display: none;
+
+}
+.page-nav{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    // left:0;  
+    left:50%;
+    transform:translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background-color: $white;
+}
+.page-nav__navbar--active{
+    @media screen and (max-width:700px){
+
+        display: block;
+
+        position: fixed;
+        top:100px;
+        left:0;
+        width: 100%;
+        z-index: 110;
+        height: calc(100vh - 100px);
+        background-color: $white;
+        display: flex;
+        z-index: 110;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+}
+.page-nav__navbar--active li{
+    margin-top: 25px;
+}
+.page-nav__navbar--active a{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.bars{
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.bars__line{
+    pointer-events: none;
+    width: 66%;
+    height: 4px;
+    display: block;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background-color: $primary;
+    transition:0.9s;
+}
+.bars__line::before,
+.bars__line::after{
+    content:"";
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    position: absolute;
+    left:0;
+    background-color: $primary;
+    transition:0.9s;
+}
+.bars__line::before{
+    top:-10px;
+}
+.bars__line::after{
+    bottom:-10px;
+}
+
+.bars--active .bars__line{
+    background-color: transparent;
+}
+.bars--active .bars__line::before{
+    top:0;
+    transform:rotate(45deg);
+}
+.bars--active .bars__line::after{
+    bottom:0;
+    transform:rotate(-45deg);
+}
+
+@media screen and (min-width:700px){
+
+    .bars{
+        display: none;
+    }
+    .page-nav__navbar{
+        display: flex;
+    }
+    .page-nav__navbar li{
+        margin-right: 35px;
+    }
+    .page-nav__navbar li:last-child{
+        margin-right: 0;
+    }
+
+}
+
